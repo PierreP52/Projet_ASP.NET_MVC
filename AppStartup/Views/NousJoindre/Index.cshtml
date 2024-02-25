@@ -1,0 +1,54 @@
+﻿@model AppStartup.Models.NousJoindreModel
+@{
+    ViewBag.Title = "Nous Joindre";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+<p>Pour nous contacter, veuillez utiliser les informations ci-dessous:</p>
+
+<table>
+    <tr>
+        <th>Adresse : </th>
+        <td>Votre adresse</td>
+    </tr>
+    <tr>
+        <th>Téléphone : </th>
+        <td>Votre numéro de téléphone</td>
+    </tr>
+    <tr>
+        <th>Email : </th>
+        <td>Votre adresse email</td>
+    </tr>
+</table>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <h3 class="mb-4">Formulaire de Contact</h3>
+
+            @using (Html.BeginForm("Index", "NousJoindre", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                <div class="mb-3">
+                    <label for="Nom" class="form-label">Nom</label>
+                    @Html.TextBoxFor(model => model.Nom, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Nom)
+                </div>
+
+                <div class="mb-3">
+                    <label for="Email" class="form-label">Email</label>
+                    @Html.TextBoxFor(model => model.Email, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Email)
+                </div>
+
+                <div class="mb-3">
+                    <label for="Message" class="form-label">Message</label>
+                    @Html.TextAreaFor(model => model.Message, new { @class = "form-control", rows = "4" })
+                    @Html.ValidationMessageFor(model => model.Message)
+                </div>
+
+                <button type="submit" class="btn btn-primary">Envoyer</button>
+            }
+        </div>
+    </div>
+</div>

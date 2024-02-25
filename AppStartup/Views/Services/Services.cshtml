@@ -1,0 +1,44 @@
+﻿@model List<AppStartup.Models.ServicesModel>
+
+@{
+    ViewData["Title"] = "Nos Services en Intelligence Artificielle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .table-container {
+        margin-top: 20px; /* Ajoute un espace en haut de la table */
+    }
+
+    .service-group {
+        margin-bottom: 30px; /* Ajoute un espace entre chaque groupe de lignes */
+    }
+
+    .hr-space {
+        margin: 20px 0; /* Ajoute un espace avec un séparateur horizontal */
+    }
+
+</style>
+
+<h2 class="mt-3">@ViewData["Title"]</h2>
+
+<div class="table-container mt-4">
+    <table class="table table-striped">
+        @foreach (var item in Model)
+        {
+            
+            <tr class="bg-light service-group">
+                <th>@Html.DisplayFor(serviceList => item.Titre)</th>
+            </tr>
+            <tr class="bg-light ">
+                <td>Type: @Html.DisplayFor(serviceList => item.Type)</td>
+            </tr>
+            <tr class="bg-light ">
+                <td>@Html.DisplayFor(serviceList => item.Description)</td>
+            </tr>
+            <tr class="hr-space">
+                <td colspan="2"><hr></td>
+            </tr>
+        }
+    </table>
+</div>

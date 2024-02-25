@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "Notre Équipe";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    
+    h2 {
+        padding-bottom: 100px
+    }
+
+    th {
+        padding-right: 200px;
+    }
+</style>
+
+<h2>@ViewBag.Title</h2>
+
+<div class="d-flex justify-content-center">
+    <table>
+        <tr>
+            <th>
+                <img src="~/lib/images/Rick Deckard.png" alt=" Photo de Rick Deckard" height="200px"/>
+            </th>
+            <th>
+                <img src="~/lib/images/SarahOConnor.png" alt=" Photo de Sarah O'Connor" height="200px"/>
+            </th>
+            <th>
+                <img src="~/lib/images/theodoreTwombly.png" alt=" Photo de Theodore Twombly" height="200px" />
+            </th>      
+        </tr>
+        <tr style="font-size: 20px;">
+            <td><b>Rick Deckard</b></td>
+            <td><b>Sarah O'Connor</b></td>
+            <td><b>Theodore Twombly</b></td>
+        </tr>
+        <tr>
+            <td>Analyste de donnée</td>
+            <td>Programmeuse Fullstack</td>
+            <td>Expert en langage naturel</td>
+        </tr>
+    </table>
+</div>
